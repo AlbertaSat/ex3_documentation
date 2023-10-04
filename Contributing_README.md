@@ -57,6 +57,7 @@ A list of acceptance criteria (What is needed for the issue to be considered com
 
 ### Copying code 
 - Be sure to included referrences to code that is not your original work in order to prevent plagarism. Referencing code may also help members find information that may be useful to them. 
+- Also be sure to check the license of any code you may be copying to ensure you are allowed to do so. Respect the requirements of said license such as inclusion of original authors in a particular format, or mention of that license in the source file containing the copied code. 
 
 ### Copyright
 - Ensure that every source file written has associated 'author' and 'copyright' metadata included in the file (for now it is found in the bottom, two lines after all code).
