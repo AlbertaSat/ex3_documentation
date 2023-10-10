@@ -1,21 +1,12 @@
-<header style="text-align: center;">
-    <b>
-        <h1>Intro to Embedded Linux OS (Petalinux for the Zybo)</h1>
-        <h5>An introductory overview for CUBICS software team</h5>
-    </b>
-    <p>
-    Written by 
-    <a href="https://docs.google.com/document/d/1hTB31M3i9ML0qjcBVeHZdQ-cc0JnZzqu339hxukDt80/edit"> Devin Headrick</a>, 2023
-    </p>
-    <p> 
-    Reproduced by Ben Tam
-    </p>
-</header>
+#Intro to Embedded Linux OS (Petalinux for the Zybo)
+**An introductory overview for CUBICS software team**
+Written by [Devin Headrick](https://docs.google.com/document/d/1hTB31M3i9ML0qjcBVeHZdQ-cc0JnZzqu339hxukDt80/edit), 2023
+   
+Reproduced by Ben Tam
 
 The best way to understand how the Petalinux embedded linux OS is built, is to do it yourself! Follow Steven Knudsens well documented steps, using Xilinx Vitis/Vivado software, without the need for any hardware until the last step. Tutorial: 
 
 https://github.com/StevenKnudsen/PetaLinux2022.2_Zybo_example/tree/main/docs/PetaLinux
-
 
 
 
@@ -78,7 +69,7 @@ Creating a petalinux project using ‘petalinux-create -t project -in MyProject�
 
 
 
-<h2 style="text-align: center;">Petalinux emulation with QEMU</h2>
+##Petalinux emulation with QEMU
 
 ####Setup steps:
 QEMU - quick emulator, is an open source emulator, which is the main component of the KVM (Kernel-based Virtual Machine) hypervisor (accelerator). Qemu’s tiny code generator (TCG) provides the ability to emulate a number of CPU architectures on various supported host platforms. 
@@ -97,8 +88,8 @@ _NOTE: You must have ‘sourced’ the ``settings.sh`` file found in the /Petali
 
 **NOTE: To terminate the QEMU emulator in your terminal , press CTRL+a, then x , on your keyboard.  NOT ctrl+c**
 
-To ssh into your virtual instance of Petalinx on QEMU, use the following command with associated ‘qemu-args’ to setup a virtual network device provided by the guest, and to setup a network backend with the emulated NIC: 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;``petalinux-boot --qemu --prebuilt 3 --qemu-args "-net nic -net user,hostfwd=tcp::2222-:22"`` 
+To ssh into your virtual instance of Petalinx on QEMU, use the following command with associated ‘qemu-args’ to setup a virtual network device provided by the guest, and to setup a network backend with the emulated NIC:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;``petalinux-boot --qemu --prebuilt 3 --qemu-args "-net nic -net user hostfwd=tcp::2222-:22"`` 
 
 You can then SSH into the virtualized petalinux OS using the following command:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;``ssh -p 2222 petalinux@localhost``
