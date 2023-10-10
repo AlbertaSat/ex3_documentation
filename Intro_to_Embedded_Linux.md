@@ -61,7 +61,7 @@ Creating a petalinux project using ‘petalinux-create -t project -in MyProject�
 2. **Root fs** - Constitutes the file system hierarchy on a linux system, starting from root directory “/”. Contains all the files and directories used to boot the system and run applications. Includes system binaries, libraries, user data, config files etc. 
 3. **(Das) U-boot** - Widely used, open source bootloader. Bootloader is the first piece of code that runs when the system is powered on. Initializes hardware, loads kernel into memory, and transfers control to the kernel. 
 
-####Typical Petalinux boot process (using system v init, not systemd): 
+#### Typical Petalinux boot process (using system v init, not systemd): 
 1. Power on or reset triggers the system's ROM code. This initializes critical hardware and starts the bootloader (U-boot).
 2. U-boot initializes additional hardware, if necessary, then finds and loads the linux kernel image into memory, and starts the kernel. 
 3. Kernel initializes the rest of the system's hardware, mounts the root file system, then starts the init process (the first user space process), from the rootfs. 
