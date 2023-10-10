@@ -1,8 +1,8 @@
 # Intro to Embedded Linux OS (Petalinux for the Zybo)
 **An introductory overview for CUBICS software team**  
-Written by [Devin Headrick](https://docs.google.com/document/d/1hTB31M3i9ML0qjcBVeHZdQ-cc0JnZzqu339hxukDt80/edit), 2023
-   
-Reproduced by Ben Tam
+Written by [Devin Headrick](https://docs.google.com/document/d/1hTB31M3i9ML0qjcBVeHZdQ-cc0JnZzqu339hxukDt80/edit), 2023  
+Reproduced by Ben Tam  
+Last Updated Oct 10, 2023  
 
 The best way to understand how the Petalinux embedded linux OS is built, is to do it yourself! Follow Steven Knudsens well documented steps, using Xilinx Vitis/Vivado software, without the need for any hardware until the last step. Tutorial: 
 
