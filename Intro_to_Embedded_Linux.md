@@ -82,16 +82,21 @@ _NOTE: You must have ‘sourced’ the ``settings.sh`` file found in the /Petali
 
 1. Follow Steven Knudsens tutorial and create a Petalinux OS project, and associated OS files. 
 2. Run the following command, to create a WIC file, which is a special file that allows simple deployment of petalinux images by including the required boot, rootfs, and related image partitions into **one** file:  
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;``petalinux-package --wic -o ./pre-built/images/linux`` 
+
 3. Now run the following command to use the previously generated WIC file to run the petalinux OS on your device, using QEMU: 
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;``petalinux-boot –qemu –prebuilt 3``
 
 **NOTE: To terminate the QEMU emulator in your terminal , press CTRL+a, then x , on your keyboard.  NOT ctrl+c**
 
 To ssh into your virtual instance of Petalinx on QEMU, use the following command with associated ‘qemu-args’ to setup a virtual network device provided by the guest, and to setup a network backend with the emulated NIC:
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;``petalinux-boot --qemu --prebuilt 3 --qemu-args "-net nic -net user hostfwd=tcp::2222-:22"`` 
 
 You can then SSH into the virtualized petalinux OS using the following command:
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;``ssh -p 2222 petalinux@localhost``
 
 Our linux distro uses a RPM (redhat) package manager. 
