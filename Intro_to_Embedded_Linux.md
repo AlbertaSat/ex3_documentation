@@ -1,5 +1,5 @@
 # Intro to Embedded Linux OS (Petalinux for the Zybo)
-**An introductory overview for CUBICS software team**
+**An introductory overview for CUBICS software team**  
 Written by [Devin Headrick](https://docs.google.com/document/d/1hTB31M3i9ML0qjcBVeHZdQ-cc0JnZzqu339hxukDt80/edit), 2023
    
 Reproduced by Ben Tam
@@ -91,11 +91,11 @@ _NOTE: You must have ‘sourced’ the ``settings.sh`` file found in the /Petali
 
 **NOTE: To terminate the QEMU emulator in your terminal , press CTRL+a, then x , on your keyboard.  NOT ctrl+c**
 
-To ssh into your virtual instance of Petalinx on QEMU, use the following command with associated ‘qemu-args’ to setup a virtual network device provided by the guest, and to setup a network backend with the emulated NIC:
+To ssh into your virtual instance of Petalinx on QEMU, use the following command with associated ‘qemu-args’ to setup a virtual network device provided by the guest, and to setup a network backend with the emulated NIC:  
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;``petalinux-boot --qemu --prebuilt 3 --qemu-args "-net nic -net user hostfwd=tcp::2222-:22"`` 
 
-You can then SSH into the virtualized petalinux OS using the following command:
+You can then SSH into the virtualized petalinux OS using the following command:  
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;``ssh -p 2222 petalinux@localhost``
 
