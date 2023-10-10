@@ -1,4 +1,4 @@
-#Intro to Embedded Linux OS (Petalinux for the Zybo)
+# Intro to Embedded Linux OS (Petalinux for the Zybo)
 **An introductory overview for CUBICS software team**
 Written by [Devin Headrick](https://docs.google.com/document/d/1hTB31M3i9ML0qjcBVeHZdQ-cc0JnZzqu339hxukDt80/edit), 2023
    
@@ -10,7 +10,7 @@ https://github.com/StevenKnudsen/PetaLinux2022.2_Zybo_example/tree/main/docs/Pet
 
 
 
-##Petalinux build process: 
+## Petalinux build process: 
 
 Firstly proprietary Xilinx Vivado software suite must be installed. This software handles the synthesis and analysis of hardware description language (HDL) designs, with features such as system on chip (SoC) development and high level synthesis (HLS). 
 
@@ -39,7 +39,7 @@ Three following items are needed on a separate Fat32 partition
 - **Image.ub:** _Not sure_
 Root file system goes on an ext4 partition (this is our disk) 
 
-##Understanding the Petalinux project directory: 
+## Understanding the Petalinux project directory: 
 
 Creating a petalinux project using ‘petalinux-create -t project -in MyProject’ will create a new directory with the name MyProject : 
 - What happens when we create a petalinux project: (called MyProject in Development folder) 
@@ -56,7 +56,7 @@ Creating a petalinux project using ‘petalinux-create -t project -in MyProject�
         - **Images:** final output images of the build process are placed here. This includes kernel image, rootfs, device tree blob, and related files. 
             - The **BOOT.bin**, and **image.ub** files are typically what get copied over to an SD card or other boot media to boot the system. 
 
-###What role does Kernel, Root file system, and U-boot play in a systems operations?
+### What role does Kernel, Root file system, and U-boot play in a systems operations?
 1. **Kernel** - Linux kernel is the core of the linux OS. Interfaces between hardware and software applications. Manages system resources, allocates processor time, manages memory, handles interrupts, and controls peripherals.
 2. **Root fs** - Constitutes the file system hierarchy on a linux system, starting from root directory “/”. Contains all the files and directories used to boot the system and run applications. Includes system binaries, libraries, user data, config files etc. 
 3. **(Das) U-boot** - Widely used, open source bootloader. Bootloader is the first piece of code that runs when the system is powered on. Initializes hardware, loads kernel into memory, and transfers control to the kernel. 
@@ -69,9 +69,9 @@ Creating a petalinux project using ‘petalinux-create -t project -in MyProject�
 
 
 
-##Petalinux emulation with QEMU
+## Petalinux emulation with QEMU
 
-####Setup steps:
+#### Setup steps:
 QEMU - quick emulator, is an open source emulator, which is the main component of the KVM (Kernel-based Virtual Machine) hypervisor (accelerator). Qemu’s tiny code generator (TCG) provides the ability to emulate a number of CPU architectures on various supported host platforms. 
 
 These are the steps I had to take to set up the Petalinux image to run on a qemu virtual machine.
@@ -96,9 +96,9 @@ You can then SSH into the virtualized petalinux OS using the following command:
 
 Our linux distro uses a RPM (redhat) package manager. 
 
-####What is the ‘ petalinux-boot –qemu –prebuilt 3 ‘ command doing under the hood? 
+#### What is the ‘ petalinux-boot –qemu –prebuilt 3 ‘ command doing under the hood? 
 
-####What are the contents of a WIC file ? 
+#### What are the contents of a WIC file ? 
 
 
 
