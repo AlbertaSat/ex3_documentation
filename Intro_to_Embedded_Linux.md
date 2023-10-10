@@ -36,7 +36,8 @@ The petalinux image needs to be **packaged** before we can transfer it to an SD 
 Three following items are needed on a separate Fat32 partition 
 - **BOOT.bin:** binary executed when system first starts up. Includes FSBL, which handles initial configuration of hardware, and loads SSBL (U-Boot), as well as the bitstream for configuring the fpga in a zynq system 
 - **Boot.scr:** _Not sure_ 
-- **Image.ub:** _Not sure_
+- **Image.ub:** _Not sure_  
+
 Root file system goes on an ext4 partition (this is our disk) 
 
 ## Understanding the Petalinux project directory: 
