@@ -20,6 +20,18 @@ For all releases, versioning will be heavily important when it comes to organizi
   - E.g from ver 2.1.0 to 2.2.0
 - Patches are backwards-compatible bugfixes or minor improvements that do not make any meaningful changes to the API which would affect currently existing code.
 
+##Versioning Specifications
+The full list of specification rules can and should be read carefully from [here.](https://semver.org/#semantic-versioning-specification-semver) Note that early development versions will work from versions 0.xx.yy until the first major release of 1.xx.yy.
+
+##Writing and Organizing Release and Patch Notes
+Insert something here
+
+##Organizing Software Versions
+Insert something here
+
+##Release Schedules 
+Insert something here
+
 
 
 
