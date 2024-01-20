@@ -51,7 +51,63 @@ information efficiently.
 
 The thing is, we are working with Linux, so we should be able to leverage the socket design paradigm to let the operating system do the scheduling work for us.
 
+## Syslog
+
+### Transaction protocol
+
+- Syslog uses UDP, usually at port 514, to pass message to the daemon.
+
+### Syslog packet
+
+- Syslog uses UTF-8 encoding for its character.
+
+![Image of a syslog message packet](./assets/syslog_message_format.png)
+
+- Syslog packets are composed of *header*, *structured-data (SD)*, and a message.
+- **Header**:
+  - Priority
+  - Version
+  - Timestamp
+  - Hostname
+  - Application
+  - Process ID
+  - Message ID
+- **SD**:
+  - "key=value" format
+  - Unclear on usage for now
+- **Message**:
+  - Encoded using UTF-8
+  - Can be arbitarily long
+
+#### Example
+
+```
+<34>1 2003-10-11T22:14:15.003Z mymachine.example.com su - ID47 - BOM'su root' failed for lonvick on /dev/pts/8
+```
+
+Follows the following format:
+
+```
+<priority>VERSION ISOTIMESTAMP HOSTNAME APPLICATION PID MESSAGEID STRUCTURED-DATA MSG
+```
+
+### Log rotation
+
+- The syslog daemon will rotate log files out of use every week. Once the
+log file is two weeks old, the log file will get archived into a `.gz`.
+
 ### How to send a log to `syslog`
+
+#### Simplest Solution
+
+The most basic method of sending a log to the syslog daemon is by using the `logger` cli program. This program will read from stdin and send the information to the syslog daemon.
+
+You can find the man page for the `logger` program [here](https://www.man7.org/linux/man-pages/man1/logger.1.html).
+
+#### Rust Library
+
+Rust has a library for interfacing with a syslog server. This crate page
+is available [here](https://docs.rs/syslog/latest/syslog/).
 
 ## Figures
 
@@ -73,3 +129,7 @@ The table above is the list of priorities in the syslog standard.
 - [Top result on how logging works on Linux](https://devconnected.com/linux-logging-complete-guide/)
 - [Embedded ninja post on embedded logging](https://blog.mbedded.ninja/programming/logging-on-an-embedded-system/)
 - [2008 Stack Overflow answer that says that syslog was good for embedded linux](https://stackoverflow.com/a/340634)
+- [Linux Handbook guide on using syslog](https://linuxhandbook.com/syslog-guide/)
+- [Stackify guide on how syslog works](https://stackify.com/syslog-101/)
+- [Syslog Protocol](https://datatracker.ietf.org/doc/rfc5424/)
+- [Rust Syslog Library](https://docs.rs/syslog/latest/syslog/)
