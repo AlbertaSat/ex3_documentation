@@ -53,9 +53,24 @@ The thing is, we are working with Linux, so we should be able to leverage the so
 
 ## Syslog
 
+### Overview
+
+- `syslog` is a logging protocol, featuring log priority levels, message frame
+specifications, and logging resolution.
+- It runs on a single server daemon system, where a `syslog` daemon will
+be responsible for collecting all the `syslog` protocol logs that comes its
+way.
+- Most `syslog` daemons work with TCP, UDP, and UNIX sockets.
+
+### Note
+
+- Most Linux distros will have `rsyslog` come pre-installed.
+- `rsyslog` requires `systemd` to run.
+
 ### Transaction protocol
 
 - Syslog uses UDP, usually at port 514, to pass message to the daemon.
+- It also has a TCP and Unix socket port that will accept `syslog` logs.
 
 ### Syslog packet
 
@@ -109,7 +124,10 @@ You can find the man page for the `logger` program [here](https://www.man7.org/l
 Rust has a library for interfacing with a syslog server. This crate page
 is available [here](https://docs.rs/syslog/latest/syslog/).
 
-## Figures
+- An implementation of the Rust syslog client has been created, and can be
+accessed by clicking on [this](https://github.com/AlbertaSat/ex3_syslog_prototype) link.
+
+## Figures and tables
 
 | **Value** | **Severity** | **Keyword** | **Description** |
 | --- | --- | --- | --- |
