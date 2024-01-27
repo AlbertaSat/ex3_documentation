@@ -1,13 +1,19 @@
 # Scheduler Primer
 
-`In progress, check back later`
+### Basic Information
+* A scheduler is defined as the process that assigns resources (usually processors -- it decides which process gets to run on the CPU) to perform tasks (adapted from [Wikipedia](https://en.wikipedia.org/wiki/Scheduling_(computing)))
+   * Different schedulers have different design goals (maximizing throughput, minimizing wait time, minimizing response time, maximizing fairness, *etc.*) depending on the application
+   * Process schedulers determine what process gets to run on the CPU and can be used to give some concurrency and multi-tasking on a single CPU
+* Completely Fair Scheduler (CFS) is the process scheduler used by Linux
+   * Uses red-black (rb) trees to prioritize processes that have spent the least time executing so far; new processes are seleced each time the current one blocks, terminates, or reaches its maximum execution time (waiting time divided by processor count)
+   * Prioritizes fairness in that each process gets an even slice of CPU time and processes with the least runtime so far are given the CPU
 
 ***
 
-# Previous Timing Research
+# Summary of Previous Timing Research
 
 ### Problem Background
-* We need to have a way to tell IRIS (the on-board camera) to take photos at particular intervals with great precision (roughly down the the millisecond), and these pictures must be scheduled repeatedly and generally predictably
+* We need to have a way to tell IRIS (the on-board camera) to take photos at particular intervals with great precision (roughly down to the millisecond), and these pictures must be scheduled repeatedly and generally predictably
 * The satellite is moving at 7 km/s, so being off by even a small amount of time can cause the photo to be of a different location on Earth or blurry, and therefore useless
 * This wasn’t really a problem for Ex-Alta 2 because the version of IRIS on that satellite had a resolution where one pixel was >7 km wide, but the new version of IRIS may have a significantly better resolution
 
@@ -41,4 +47,4 @@
 ### Main Takeaways
 * Cron may not be useful in our situation as it is not precise enough, but similar tools that overcome this problem exist -- they each come with their own weaknesses and risks, but systemd seems like a viable option
 * Making a custom daemon to do this would obviously be the best solution for our case, but this comes with potentially significant risk and time investment
-* More research needs to be done, but it seems the built-in Fprime utility meets our needs and would be easiest to use, it seems to be the best choice
+* More research should be done
