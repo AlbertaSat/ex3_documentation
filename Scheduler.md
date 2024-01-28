@@ -1,12 +1,25 @@
 # Scheduler Primer
 
 ### Basic Information
-* A scheduler is defined as the process that assigns resources (usually processors -- it decides which process gets to run on the CPU) to perform tasks (adapted from [Wikipedia](https://en.wikipedia.org/wiki/Scheduling_(computing)))
+* A scheduler is defined as the process that assigns resources (usually processors -- it decides which task gets to run on the CPU) to perform tasks (adapted from [Wikipedia](https://en.wikipedia.org/wiki/Scheduling_(computing)))
    * Different schedulers have different design goals (maximizing throughput, minimizing wait time, minimizing response time, maximizing fairness, *etc.*) depending on the application
    * Process schedulers determine what process gets to run on the CPU and can be used to give some concurrency and multi-tasking on a single CPU
 * Completely Fair Scheduler (CFS) is the process scheduler used by Linux
-   * Uses red-black (rb) trees to prioritize processes that have spent the least time executing so far; new processes are seleced each time the current one blocks, terminates, or reaches its maximum execution time (waiting time divided by processor count)
-   * Prioritizes fairness in that each process gets an even slice of CPU time and processes with the least runtime so far are given the CPU
+   * Uses red-black (rb) trees to prioritize tasks that have spent the least time executing so far; new tasks are seleced each time the current one blocks, terminates, or reaches its maximum execution time (waiting time divided by processor count)
+   * Prioritizes fairness in that each task gets an even slice of CPU time and tasks with the least runtime so far are given the CPU
+
+### More Information
+* [Man page](https://man7.org/linux/man-pages/man7/sched.7.html) has lots of in-depth information about scheduling in Linux
+   * Child processes and threads generally inherit the scheduling parameters of their parent
+   * Some features exist for group and batch scheduling of many tasks at once
+* Tasks have `priority` and `nice` values
+   * Each possible `priority` value has its own rb tree; when picking a new task, all tasks in the rb tree of the highest `priority` are executed to completion before lower `priority` tasks are selected (this is how real-time tasks are supported)
+   * The scheduling policy is pre-emptive, meaning that high-`priority` tasks overpower the currently-running task on arrival and take control of the CPU
+   * The `nice` value of a task (same across all threads) helps tell the scheduler if the task should be favored or unfavored
+* Alternative scheduling architectures can be used instead of the standard CFS algorithm
+   * FIFO (first-in, first-out): tasks run in order of arrival, no time-slicing, still can support priorities (and thus pre-empting)
+   * RR (round-robin): like FIFO but tasks split time evenly and periodically yield CPU for other tasks to have a turn, still can support priorities (and thus pre-empting)
+   * EDF (earliest deadline first): tasks that must be completed soonest are picked first, practically priority-based scheduling where priority is how close the deadline is
 
 ***
 
