@@ -151,3 +151,4 @@ The table above is the list of priorities in the syslog standard.
 - [Stackify guide on how syslog works](https://stackify.com/syslog-101/)
 - [Syslog Protocol](https://datatracker.ietf.org/doc/rfc5424/)
 - [Rust Syslog Library](https://docs.rs/syslog/latest/syslog/)
+- [Other Rust logging methods](https://www.shuttle.rs/blog/2023/09/20/logging-in-rust)
