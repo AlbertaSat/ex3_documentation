@@ -38,20 +38,21 @@ Issues that have been started (moved from TODO) must have the following:
 
 - An assignee
 - An associated branch (if the item is not in 'TODO'. Obvious exceptions if the task cannot be related to a repo)
-- A start date
-- A sprint # (when it should be completed)
+- A start date (the latest work shall begin on this)
+- An End data (estimated)
 
-#### The following is a template for a proper description
+#### Issue Template
 
-TITLE:
+```@md
+## Description:
 
-"Type here": Summary of what is being done
+## Deliverables
+- [ ] 
 
-BODY:
+## Resources
+- 
 
-A more detailed description of the issue here.
-
-A list of acceptance criteria (What is needed for the issue to be considered complete and ready for PR):
+```
 
 ### Commit standards
 
