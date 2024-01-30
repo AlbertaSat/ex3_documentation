@@ -40,8 +40,13 @@ Issues that have been started (moved from TODO) must have the following:
 - An associated branch (if the item is not in 'TODO'. Obvious exceptions if the task cannot be related to a repo)
 - A start date (the latest work shall begin on this)
 - An End data (estimated)
+- A start date (the latest work shall begin on this)
+- An End data (estimated)
 
 #### Issue Template
+#### Issue Template
+
+- Every issue MUST use this template at a minimum. This helps us all get an idea of the scope and objectives of the issue being worked on.
 
 ```@md
 ## Description:
