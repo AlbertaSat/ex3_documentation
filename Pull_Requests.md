@@ -1,7 +1,7 @@
 # Code Reviews
 
 ## What is a code review?
-When you, or another team member wants add changes to an AlbertaSat repository they will go through a process defined by the (contributing guideline section)[Contributing_README.md]. This typically involves creating a branch, making changes, making a pull request, code review, then the reviewer either asks for changes to be made or approves the pull request. After the pull request is approved the code can be merged to main, or additional changes can be made. In this documentation we will go over guidelines for reviewing pull requests.
+When you, or another team member wants add changes to an AlbertaSat repository they will go through a process defined by the (contributing guideline section)[Contributing_README.md]. This typically involves creating a branch, making changes, making a pull request, code review, then the reviewer either asks for changes to be made or approves the pull request. After the pull request is approved the code can be merged to main, or additional changes can be made. In this documentation we will go over guidelines for reviewing and writing pull requests.
 
 ## How should a pull request look like?
 __This section we will go over to how write a proper pull request that allows code reviewers to quickly and efficiently review code.__\
