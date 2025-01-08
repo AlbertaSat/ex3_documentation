@@ -14,13 +14,14 @@ The following are some general rules of what a pull request should look like:\
     - Describe the changes you made and how the changes you made solve the root issue.
     - If neccesary, clearly state any feedback you are looking for with a mention to the person who can help with feedback.
 - If your pull request is still a work in progress, prefix the name of the pull request with "[WIP]".
+- Convert your PR to a draft if you are not ready to have it reviewed, you can always convert it back to a PR at a later time.
 
 ## How should a pull request be reviewed?
 __This section we will go over to how review a pull request.__\
 \
 The following are some general rules of how a reviewer should review a pull request:\
 - If the PR is labelled as "WIP" then it should not be approved.
-- Thoroughly go all changes made and if neccesary leave feedback.
+- Thoroughly go over all changes made and if neccesary leave feedback.
 - When leaving feed back try to be as specific as possible (Comment with the specific code line, and the requested change).
 - Checkout the branch on your machine and test to ensure it does not break anything and implements the feature as intended.
 - When requesting changes, be specifc about what you want changed (comment or propose a modified code block or line).
