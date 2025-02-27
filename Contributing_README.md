@@ -54,14 +54,14 @@ A list of acceptance criteria (What is needed for the issue to be considered com
 - All code files in this organization - relating to the ExAlta3 mission and onward - must follow a particular coding format and style. An automatic workflow action will test your code against theses standards automatically upon any request to merge with main.
 - For Python: It is suggested to install a pylint linter extension in your IDE, to write code that follows these standards as you go.
 - For C/C++: It is suggested to intsall a clang linter extension in your IDE, to write code that follows these standards as you go. 
-
-### Copying code 
+- For Rust: It is suggested to use cargo clippy to lint your code, additionally use the rust analyzer (available as extension in your IDE) to write code that follows these standards as you go.
+### Copying code
 - Be sure to included referrences to code that is not your original work in order to prevent plagarism. Referencing code may also help members find information that may be useful to them. 
 
 ### Copyright
 - Ensure that every source file written has associated 'author' and 'copyright' metadata included in the file (for now it is found in the bottom, two lines after all code).
 - Because these items will exist in every source file, style checkers like pylint must be told explicitly told to ignore them otherwise your code will fail style tests
-- The following is an example template for the copyright to be added to ALL source files written by contributing members: 
+- The following is an example template for the copyright to be added to ALL source files written by contributing members:
 
 #### Copyright template
     Copyright 2023 [Your name here]
